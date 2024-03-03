@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { randomUUID } from 'crypto';
 
 test('User can submit contact us form', async ({ page }) => {
-  await page.goto('https://shopdemo-alex-hot.koyeb.app/');
+  await page.goto('/');
   await page.getByRole('link', { name: 'Contact Us' }).first().click();
   await page.getByPlaceholder('Your Email Address').fill(`natashatop${randomUUID()}@gmail.com`);
   await page.getByPlaceholder('You Full Name').fill('natashatop');
