@@ -3,8 +3,8 @@ import { login } from '../app/login.page';
 
 
 test('User can buy product', async ({ page }) => {
-    
-    await login.doLogin(page, 'xotabu4@gmail.com', 'xotabu4@gmail.com');
+    const loginPage = login(page);
+    await loginPage.doLogin('xotabu4@gmail.com', 'xotabu4@gmail.com');
     await page.getByRole('link', { name: 'Brands ' }).click();
     await page.getByRole('menuitem', { name: 'Nizhyn cannery' }).click();
     await page.getByRole('link', { name: 'CHERRY TOMATOES By Nizhyn' }).click();
